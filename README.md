@@ -4,10 +4,10 @@ After working for some time as an engineer at a very security-obsessed company I
 
 ## Contents
 
-- Guiding principles (#guiding-principles)
-- Basics (#basics)
-- Basic hardening (#basic-hardening)
-- Two-factor SSH/sudo authentication (#two-factor-ssh/sudo-authentication)
+- [Guiding principles] (#guiding-principles)
+- [Basics] (#basics)
+- [Basic hardening] (#basic-hardening)
+- [Two-factor SSH/sudo authentication] (#two-factor-ssh-sudo-authentication)
 
 ## Guiding principles
 

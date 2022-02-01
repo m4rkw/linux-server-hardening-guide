@@ -158,7 +158,6 @@ Backup everything you care about on your servers to a remote object store such a
 Also don't forget to encrypt your backups, don't just trust encrypted buckets. Rclone - https://rclone.org - is a great tool for backups and supports many cloud backends. Also use zstd for compression as it's way faster than anything else. A simple way to create an encrypted backup would be something like:
 
 ````
-cd /
 tar -cP --exclude=/dev/* --exclude=lost\+found/* --exclude=/media/* --exclude=/proc/* \
   --exclude=/run/* --exclude=/sys/* --exclude=/tmp/* / /usr/bin/zstd | \
   /usr/bin/openssl aes-256-cbc -salt -pass file:/root/my-backup-key -md sha256 \

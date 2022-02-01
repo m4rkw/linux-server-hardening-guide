@@ -50,7 +50,7 @@ Quick and easy ways to harden a server:
 2. Restrict ssh ingress to specific networks or IPs.
 3. Use a TPM or secure enclave to store your ssh key so that the private key can't be read by humans. On macs this can be done with Secretive - https://github.com/maxgoedjen/secretive. On iOS some SSH clients support generating ssh keys in the secure enclave. For a generic solution this can be done with a Yubikey or similar hardware security key.
 4. If the machine isn't running any production services consider having a cron job that installs the latest distro packages for you. Most distros support a way to configure this.
-5. If the machine has sensitive data on it, consider use disk encryption. Full-disk encryption is one option but a simpler way is to use cryptsetup to create an encrypted container.
+5. If the machine has sensitive data on it, consider using disk encryption. Full-disk encryption is one option but a simpler way is to use cryptsetup to create an encrypted container.
 
 ## Two-factor SSH and sudo authentication
 

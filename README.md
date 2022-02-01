@@ -50,6 +50,7 @@ Quick and easy ways to harden a server:
 2. Restrict ssh ingress to specific networks or IPs.
 3. Use a TPM or secure enclave to store your ssh key so that the private key can't be read by humans. On macs this can be done with Secretive - https://github.com/maxgoedjen/secretive. On iOS some SSH clients support generating ssh keys in the secure enclave. For a generic solution this can be done with a Yubikey or similar hardware security key.
 4. If the machine isn't running any production services consider having a cron job that installs the latest distro packages for you. Most distros support a way to configure this.
+5. If the machine has sensitive data on it, consider use disk encryption. Full-disk encryption is one option but a simpler way is to use cryptsetup to create an encrypted container.
 
 ## Two-factor SSH and sudo authentication
 
@@ -168,3 +169,5 @@ Don't build your machines manually, use provisioning tools like ansible. It can 
 1. For machines that don't have a lot of changing data on them I build them purely with ansible and consider them ephemeral
 
 2. For machines that do have changing data I take tarball backups once a day and then have ansible code that builds the server which integrates with the backup system. The ansible playbook does some basic provisionning and then restores the latest backup from the backend service, copies a bunch of data from the backup into place, and then continues on with provisioning. This approach reduces some of the burden of keeping the ansible code in sync with the machine because the backups happen automatically and so your restore process always has access to the latest files and data from the machine.
+
+If you feel the effort is justified, rebuilding your machines once a month will make attacker persistence practically impossible.

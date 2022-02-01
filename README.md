@@ -9,7 +9,7 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Basic hardening](#basic-hardening)
 - [Two-factor SSH and sudo authentication](#two-factor-ssh-and-sudo-authentication)
 - [Restrict egress](#restrict-egress)
-- [Use apparmor or selinux](#use-apparmor-or-sexlinux)
+- [Use apparmor or selinux](#use-apparmor-or-selinux)
 - [Harden webservers](#harden-webservers)
 - [Monitor security config](#monitor-security-config)
 - [Monitor for errant processes](#monitor-for-errant-processes), listening ports and suid binaries

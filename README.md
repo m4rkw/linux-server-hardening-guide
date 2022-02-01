@@ -121,6 +121,7 @@ If you're running a webserver:
 2. Use mod security for apache or nginx and keep the rules up to date.
 3. Use authentication for anything internet-facing that you don't want others to access.
 4. Use TLS for everything and scan your TLS configuration with public scanners to verify that your configuration is strong.
+5. If you're only running web services for your own use, consider running them on random high port numbers.
 
 ## Monitor security config
 

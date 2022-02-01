@@ -118,10 +118,11 @@ Carefully written apparmor/selinux profiles can be very effective at mitigating 
 If you're running a webserver:
 
 1. Use static content rather than scripts as much as possible. If you must use dynamic scripts, ideally just use them server-side to generate static content and then serve that rather than having dynamic scripts internet-facing.
-2. Use mod security for apache or nginx and keep the rules up to date.
-3. Use authentication for anything internet-facing that you don't want others to access.
-4. Use TLS for everything and scan your TLS configuration with public scanners to verify that your configuration is strong.
-5. If you're only running web services for your own use, consider running them on random high port numbers.
+2. Disable all modules that you aren't using.
+3. Use mod security for apache or nginx and keep the rules up to date.
+4. Use authentication for anything internet-facing that you don't want others to access.
+5. Use TLS for everything and scan your TLS configuration with public scanners to verify that your configuration is strong.
+6. If you're only running web services for your own use, consider running them on random high port numbers.
 
 ## Monitor security config
 

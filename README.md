@@ -107,6 +107,8 @@ Apparmor and selinux are an excellent way to have a last line of defence against
 
 I prefer apparmor because it's a lot easier to use than selinux and comes with aa-logprof which parses /var/log/syslog for DENIED messages and then prompts you interactively to confirm or deny whether things should be allowed. If you allow them it automatically updates the apparmor profile for you which is really convenient. You can easily generate an apparmor profile for any system binary by simply creating an empty one and then iteratively running the program and aa-logprof to incrementally add the things it needs access to to its apparmor profile.
 
+Ideally every process on your server that has any attack surface should have a carefully crafted apparmor profile. This means everything internet-facing and anything which could potentially possibly indirectly end up processing input from outside.
+
 It's also a good idea to monitor syslog yourself and alert if you get DENIED messages for any reason. You may not find all of the relevant code paths in your initial testing so it's likely that at some later date a program with an actively-enforced apparmor profile might legitimately need to do something new which would then be blocked.
 
 Carefully written apparmor/selinux profiles can be very effective at mitigating 0day exploits.

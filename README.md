@@ -159,7 +159,10 @@ Also don't forget to encrypt your backups, don't just trust encrypted buckets. R
 
 ````
 cd /
-tar -cP --exclude=/dev/* --exclude=lost\+found/* --exclude=/media/* --exclude=/proc/* --exclude=/run/* --exclude=/sys/* --exclude=/tmp/* / /usr/bin/zstd | /usr/bin/openssl aes-256-cbc -salt -pass file:/root/my-backup-key -md sha256 -iter 5000 | /usr/bin/rclone rcat b2:bucket/myserver/2022-02-01.tar.zs.enc
+tar -cP --exclude=/dev/* --exclude=lost\+found/* --exclude=/media/* --exclude=/proc/* \
+  --exclude=/run/* --exclude=/sys/* --exclude=/tmp/* / /usr/bin/zstd | \
+  /usr/bin/openssl aes-256-cbc -salt -pass file:/root/my-backup-key -md sha256 \
+  -iter 5000 | /usr/bin/rclone rcat b2:bucket/myserver/2022-02-01.tar.zs.enc
 ````
 
 ## Be Devops-as-fuck

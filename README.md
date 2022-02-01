@@ -89,7 +89,7 @@ You can also use this for sudo authentication by adding the "auth sufficient" li
 Everyone uses a basic firewall to restrict ingress but restricting egress is a very powerful control. Quite a lot of malware or exploits that try to get a foothold in a system will make calls out to the internet if they manage to gain code execution. Locking down your egress is a great way to block C2 channels and break the attack chain. It's not hard to do either:
 
 1. Install squid proxy
-2. Configure it to block everything not on a allowlist:
+2. Configure it to block everything not on an allowlist:
 
 ````
 acl allowlist dstdom_regex '/etc/squid/allowlist.txt'

@@ -12,7 +12,7 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Use apparmor or selinux](#use-apparmor-or-selinux)
 - [Harden webservers](#harden-webservers)
 - [Monitor security config](#monitor-security-config)
-- [Monitor for errant processes](#monitor-for-errant-processes), listening ports and suid binaries
+- [Monitor for errant processes, listening ports and suid binaries](#monitor-for-errant-processes-listening-ports-and-suid-binaries)
 - [Use canary tokens](#use-canary-tokens)
 - [Keep an eye out for world-ending bugs](#keep-an-eye-out-for-world-ending-bugs)
 - [Use immutable backups](#use-immutable-backups)

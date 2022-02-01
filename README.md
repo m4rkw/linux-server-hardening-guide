@@ -99,7 +99,7 @@ http_access deny all
 
 3. Configure your firewall to block all egress except for DNS and outbound http/https as the user that the squid proxy runs as.
 4. Configure all of your services that need egress to use the squid proxy (such as apt/yum etc).
-5. Add regex rules as necessary to the allowlist patterns list.
+5. Add regex rules as necessary to the allowlist.
 
 ## Use apparmor or selinux
 

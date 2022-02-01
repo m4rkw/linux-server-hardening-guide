@@ -12,7 +12,7 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Use apparmor or selinux](#use-apparmor)
 - [Harden webservers](#harden-webservers)
 - [Monitor security config](#monitor-security-config)
-- [Monitor for errant processes, listening ports and suid binaries](#monitor-processes)
+- [Monitor for errant processes](#monitor-processes), listening ports and suid binaries
 - [Use canary tokens](#use-canary-tokens)
 - [Keep an eye out for world-ending bugs](#keep-an-eye-out)
 - [Use immutable backups](#use-immutable-backups)
@@ -100,7 +100,7 @@ http_access deny all
 4. Configure all of your services that need egress to use the squid proxy (such as apt/yum etc).
 5. Add regex rules as necessary to the whitelist patterns list.
 
-## Use apparmor / selinux
+## Use apparmor or selinux
 
 Apparmor and selinux are an excellent way to have a last line of defence against 0day attacks. These tools allow you to create profiles that describe what each process running on your system is allowed to do, in terms of file access, system calls etc. Any attempt to read files, execute processes or do anything that isn't in the profile will be denied and a syslog message generated.
 

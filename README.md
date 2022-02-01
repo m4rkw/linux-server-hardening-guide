@@ -142,7 +142,9 @@ Thinkst Canary are an awesome company who provide free canary tokens here: https
 
 You can drop a few of these around your system and get alerted if anyone tries to use them. Good things to do this with are AWS keys and SSH keys. An attacker seeing these on a compromised system almost can't help trying them out and then you know straight away that you've got a problem. Thinkst's free tokens don't have an SSH key option but it's not hard to roll your own.
 
-## Keep an eye out for world-ending bugs that might affect your systems. Good places to pay attention to are:
+## Keep an eye out for world-ending bugs
+
+These are becoming all too common these days, good places to keep an eye on are:
 
 - Security mailing lists
 - Security podcasts like the excellent Risky Business - https://risky.biz

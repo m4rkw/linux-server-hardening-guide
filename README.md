@@ -171,7 +171,7 @@ tar -cP --exclude=/dev/* --exclude=lost\+found/* --exclude=/media/* --exclude=/p
 
 Don't build your machines manually, use provisioning tools like ansible. It can be challenging to keep the code in sync with reality but it's worth it. If you ever need to rebuild a system for any reason it's a lot easier when you have a bunch of ansible. I tend to use one of two approaches with my systems:
 
-1. For machines that don't have a lot of changing data on them I build them purely with ansible and consider them ephemeral
+1. For machines that don't have a lot of changing data on them I build them purely with ansible and consider them ephemeral.
 
 2. For machines that do have changing data I take tarball backups once a day and then have ansible code that builds the server which integrates with the backup system. The ansible playbook does some basic provisioning and then restores the latest backup from the backup service, copies a bunch of data from the backup into place, and then continues on with provisioning. This approach reduces some of the burden of keeping the ansible code in sync with the machine because the backups happen automatically and so your restore process always has access to the latest files and data from the machine.
 

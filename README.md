@@ -79,4 +79,14 @@ http_access deny all
 4. Configure all of your services that need egress to use the squid proxy (such as apt/yum etc).
 5. Add regex rules as necessary to the whitelist patterns list.
 
+## Use apparmor / selinux
+
+Apparmor and selinux are an excellent way to have a last line of defence against 0day attacks. These tools allow you to create profiles that describe what each process running on your system is allowed to do, in terms of file access, system calls etc. Any attempt to read files, execute processes or do anything that isn't in the profile will be denied and a syslog message generated.
+
+I prefer apparmor because it's a lot easier to use than selinux and comes with aa-logprof which parses /var/log/syslog for DENIED messages and then prompts you interactively to confirm or deny whether things should be allowed. If you allow them it automatically updates the apparmor profile for you which is really convenient. You can easily generate an apparmor profile for any system binary by simply creating an empty one and then iteratively running the program and aa-logprof to incrementally add the things it needs access to to its apparmor profile.
+
+It's also a good idea to monitor syslog yourself and alert if you get DENIED messages for any reason. You may not find all of the relevant code paths in your initial testing so it's likely that at some later date a program with an actively-enforced apparmor profile might legitimately need to do something new which would then be blocked.
+
+Carefully written apparmor/selinux profiles can be very effective at mitigating 0day exploits.
+
 

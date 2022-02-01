@@ -2,6 +2,13 @@
 
 After working for some time as an engineer at a very security-obsessed company I decided it would be a good exercise to note down and organise all the things I've learned both at work and in my spare time related to Linux server security. This guide will focus on Linux in a server context but many of the ideas here are applicable to other systems.
 
+## Contents
+
+- Guiding principles (#guiding-principles)
+- Basics (#basics)
+- Basic hardening (#basic-hardening)
+- Two-factor SSH/sudo authentication (#two-factor-ssh/sudo-authentication)
+
 ## Guiding principles
 
 1. Defence in depth. No single control is going to save you, you want to build strong security into as many levels of your systems as possible so that the odds are if you do get attacked you'll have something that breaks the attack chain.

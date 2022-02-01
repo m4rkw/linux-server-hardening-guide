@@ -89,17 +89,17 @@ You can also use this for sudo authentication by adding the "auth sufficient" li
 Everyone uses a basic firewall to restrict ingress but restricting egress is a very powerful control. Quite a lot of malware or exploits that try to get a foothold in a system will make calls out to the internet if they manage to gain code execution. Locking down your egress is a great way to block C2 channels and break the attack chain. It's not hard to do either:
 
 1. Install squid proxy
-2. Configure it to block everything not on a whitelist:
+2. Configure it to block everything not on a allowlist:
 
 ````
-acl whitelist dstdom_regex '/etc/squid/whitelist.txt'
-http_access allow whitelist
+acl allowlist dstdom_regex '/etc/squid/allowlist.txt'
+http_access allow allowlist
 http_access deny all
 ````
 
 3. Configure your firewall to block all egress except for DNS and outbound http/https as the user that the squid proxy runs as.
 4. Configure all of your services that need egress to use the squid proxy (such as apt/yum etc).
-5. Add regex rules as necessary to the whitelist patterns list.
+5. Add regex rules as necessary to the allowlist patterns list.
 
 ## Use apparmor or selinux
 

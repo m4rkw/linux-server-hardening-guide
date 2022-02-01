@@ -9,10 +9,10 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Basic hardening](#basic-hardening)
 - [Two-factor SSH/sudo authentication](#two-factor-ssh-sudo-authentication)
 - [Restrict egress](#restrict-egress)
-- [Use apparmor / selinux](#use-apparmor)
+- [Use apparmor or selinux](#use-apparmor)
 - [Harden webservers](#harden-webservers)
 - [Monitor security config](#monitor-security-config)
-- [Monitor for errant processes / listening ports / suid binaries](#monitor-processes)
+- [Monitor for errant processes, listening ports and suid binaries](#monitor-processes)
 - [Use canary tokens](#use-canary-tokens)
 - [Keep an eye out for world-ending bugs](#keep-an-eye-out)
 - [Use immutable backups](#use-immutable-backups)
@@ -130,7 +130,7 @@ It's really easy to temporarily change a security control on one of your systems
 
 Then have a monitoring system which checks these things are still in place every 5min or so and alerts you if they change. It's ok if you have a need to temporarily lift them for some reason as long as you get notified and remember to put them back.
 
-## Monitor for errant processes / listening ports / suid binaries
+## Monitor for errant processes, listening ports and suid binaries
 
 If you get compromised by some kind of automated hacking bot, chances are it's going to try to persist or set up listening sockets. Periodically scan the process table for processes running under the uids of your public-facing services, such as the users that nginx or apache run as. Create a list of the processes you expect to see and alert for anything that isn't on the list. Note that processes can overwrite their own argv[0] to hide what they are so don't trust this, always check the /proc/{pid}/exe symlink.
 

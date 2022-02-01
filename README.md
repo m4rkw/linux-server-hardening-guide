@@ -18,7 +18,43 @@ These are things that you should *always* even if you don't care a lot about the
 
 1. Turn off unnecessary internet-facing services.
 2. Use a basic ingress firewall like iptables.
-3. Use ssh keys for authentication rather than passwords.
-4. Don't run ssh on tcp/22, use a random high-number port instead.
+3. Disable root ssh access.
+4. Use ssh keys for authentication and disable password authentication.
+5. Don't run ssh on tcp/22, use a random high-number port instead.
 
+## Basic hardening
 
+Quick and easy ways to harden a server:
+
+1. Remove the +s (suid) bit from all system binaries that you don't need to use.
+2. Restrict ssh ingress to specific networks or IPs.
+3. Use a TPM or secure enclave to store your ssh key so that the private key can't be read by humans. On macs this can be done with Secretive - https://github.com/maxgoedjen/secretive. On iOS some SSH clients support generating ssh keys in the secure enclave. For a generic solution this can be done with a Yubikey or similar hardware security key.
+
+## Two-factor SSH/sudo authentication
+
+I highly recommend using the duo pam module - https://duo.com/docs/duounix - for sshd and sudo access. It's very convenient, provides a much greater level of security than ssh keys alone and is free for personal use.
+
+1. Compile and install the pam module
+2. Create a Unix application on the duo website
+3. Configure /etc/duo/pam\_duo.conf with your duo application config, set autopush = yes
+4. Add this line to the top of your /etc/pam.d/sshd file:
+
+````
+auth sufficient /usr/lib64/security/pam_duo.so
+````
+
+(make sure the path to the installed module is correct)
+
+5. Configure sshd:
+
+````
+ChallengeResponseAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive
+````
+
+You can exclude specific users from needing to use duo with:
+
+````
+Match User myuser
+  AuthenticationMethods publickey
+````

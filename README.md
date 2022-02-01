@@ -9,3 +9,16 @@ After working for some time as an engineer at a very security-obsessed company I
 2. Threat model. Decide what level of attacks you care about defending against and which you're not going to worry about. If you're running a test nodejs server on a tiny vps and have no sensitive data on it at all, you probably don't need to try to defend against the potential for a nation-state attack.
 
 3. Security is always a trade-off with convenience. Before securing a system decide how much inconvenience you're willing to tolerate in the name of security. Yubikeys are powerful tools but they're also hassle to use.
+
+4. This is a living document and PRs are very welcome.
+
+## Basics
+
+These are things that you should *always* even if you don't care a lot about the security of the system.
+
+1. Turn off unnecessary internet-facing services.
+2. Use a basic ingress firewall like iptables.
+3. Use ssh keys for authentication rather than passwords.
+4. Don't run ssh on tcp/22, use a random high-number port instead.
+
+

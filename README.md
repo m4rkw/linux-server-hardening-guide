@@ -7,7 +7,7 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Guiding principles](#guiding-principles)
 - [Basics](#basics)
 - [Basic hardening](#basic-hardening)
-- [Two-factor SSH/sudo authentication](#two-factor-ssh-sudo-authentication)
+- [Two-factor SSH and sudo authentication](#two-factor-ssh-sudo-authentication)
 - [Restrict egress](#restrict-egress)
 - [Use apparmor or selinux](#use-apparmor)
 - [Harden webservers](#harden-webservers)
@@ -51,7 +51,7 @@ Quick and easy ways to harden a server:
 3. Use a TPM or secure enclave to store your ssh key so that the private key can't be read by humans. On macs this can be done with Secretive - https://github.com/maxgoedjen/secretive. On iOS some SSH clients support generating ssh keys in the secure enclave. For a generic solution this can be done with a Yubikey or similar hardware security key.
 4. If the machine isn't running any production services consider having a cron job that installs the latest distro packages for you. Most distros support a way to configure this.
 
-## Two-factor SSH/sudo authentication
+## Two-factor SSH and sudo authentication
 
 I highly recommend using the duo pam module - https://duo.com/docs/duounix - for sshd and sudo access. It's very convenient, provides a much greater level of security than ssh keys alone and is free for personal use.
 

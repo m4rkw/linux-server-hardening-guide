@@ -7,14 +7,14 @@ After working for some time as an engineer at a very security-obsessed company I
 - [Guiding principles](#guiding-principles)
 - [Basics](#basics)
 - [Basic hardening](#basic-hardening)
-- [Two-factor SSH and sudo authentication](#two-factor-ssh-sudo-authentication)
+- [Two-factor SSH and sudo authentication](#two-factor-ssh-and-sudo-authentication)
 - [Restrict egress](#restrict-egress)
-- [Use apparmor or selinux](#use-apparmor)
+- [Use apparmor or selinux](#use-apparmor-or-sexlinux)
 - [Harden webservers](#harden-webservers)
 - [Monitor security config](#monitor-security-config)
-- [Monitor for errant processes](#monitor-processes), listening ports and suid binaries
+- [Monitor for errant processes](#monitor-for-errant-processes), listening ports and suid binaries
 - [Use canary tokens](#use-canary-tokens)
-- [Keep an eye out for world-ending bugs](#keep-an-eye-out)
+- [Keep an eye out for world-ending bugs](#keep-an-eye-out-for-world-ending-bugs)
 - [Use immutable backups](#use-immutable-backups)
 - [Be Devops-as-fuck](#be-devops-as-fuck)
 

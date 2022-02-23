@@ -142,6 +142,8 @@ If you get compromised by some kind of automated hacking bot, chances are it's g
 
 Same thing for listening sockets, make a list of the listening ports you expect on each of your interfaces and alert for anything that appears that wasn't on the list. Do the same thing for suid binaries so you get alerted if package updates occur that revert any hardening work you've done.
 
+Consider running [OSSEC](https://github.com/ossec/ossec-hids) which does a lot of this kind of security monitoring (and lots more) out of the box. And is surprisingly un-noisy.
+
 ## Use canary tokens
 
 Thinkst Canary are an awesome company who provide free canary tokens here: https://canarytokens.org/generate

@@ -55,7 +55,7 @@ Quick and easy ways to harden a server:
 
 ## Two-factor SSH and sudo authentication
 
-I highly recommend using the duo pam module - https://duo.com/docs/duounix - for sshd and sudo access. It's very convenient, provides a much greater level of security than ssh keys alone and is free for personal use.
+I highly recommend using the [duo pam module](https://duo.com/docs/duounix) - for sshd and sudo access. It's very convenient, provides a much greater level of security than ssh keys alone and is free for personal use.
 
 1. Compile and install the pam module
 2. Create a Unix application on the duo website
@@ -153,14 +153,14 @@ You can drop a few of these around your system and get alerted if anyone tries t
 These are becoming all too common these days, good places to keep an eye on are:
 
 - Security mailing lists
-- Security podcasts like the excellent Risky Business - https://risky.biz
+- Security podcasts like the excellent [Risky Business](https://risky.biz)
 - Popular infosec people on twitter
 
 ## Use immutable backups
 
 Backup everything you care about on your servers to a remote object store such as S3 or B2. Both of these support object-locking, allowing you to specify a timeframe within which your backup objects cannot be modified or deleted. If someone compromises your server this gives you some protection against your machine being erased along with the backups.
 
-Also don't forget to encrypt your backups, don't just trust encrypted buckets. Rclone - https://rclone.org - is a great tool for backups and supports many cloud backends. Also use zstd for compression as it's way faster than anything else. A simple way to create an encrypted backup would be something like:
+Also don't forget to encrypt your backups, don't just trust encrypted buckets. [Rclone](https://rclone.org) - is a great tool for backups and supports many cloud backends. Also use zstd for compression as it's way faster than anything else. A simple way to create an encrypted backup would be something like:
 
 ````
 tar -cP --exclude=/dev/* --exclude=lost\+found/* --exclude=/media/* --exclude=/proc/* \
